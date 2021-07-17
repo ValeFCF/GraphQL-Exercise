@@ -36,6 +36,8 @@
 		105914A826A2ABFF00ED3914 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 105914A726A2ABFF00ED3914 /* SDWebImage */; };
 		105914AD26A2B2BD00ED3914 /* FeaturedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 105914AC26A2B2BD00ED3914 /* FeaturedView.xib */; };
 		105914B226A2B9B200ED3914 /* FeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105914B126A2B9B200ED3914 /* FeaturedView.swift */; };
+		105914B826A2C18E00ED3914 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105914B726A2C18E00ED3914 /* WebViewController.swift */; };
+		105914BD26A2C6C100ED3914 /* WebViewLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105914BC26A2C6C100ED3914 /* WebViewLoading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		105914A026A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
 		105914AC26A2B2BD00ED3914 /* FeaturedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeaturedView.xib; sourceTree = "<group>"; };
 		105914B126A2B9B200ED3914 /* FeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedView.swift; sourceTree = "<group>"; };
+		105914B726A2C18E00ED3914 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		105914BC26A2C6C100ED3914 /* WebViewLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewLoading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 		1059142426A265BE00ED3914 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				105914B626A2C17900ED3914 /* Web */,
 				1059148A26A29BE500ED3914 /* LaunchDetails */,
 				1059144F26A26A5E00ED3914 /* Main */,
 				1059144026A2676000ED3914 /* Network */,
@@ -284,6 +289,15 @@
 				105914B126A2B9B200ED3914 /* FeaturedView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		105914B626A2C17900ED3914 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				105914B726A2C18E00ED3914 /* WebViewController.swift */,
+				105914BC26A2C6C100ED3914 /* WebViewLoading.swift */,
+			);
+			path = Web;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1059148526A282F200ED3914 /* LaunchTableViewCell.swift in Sources */,
+				105914B826A2C18E00ED3914 /* WebViewController.swift in Sources */,
 				105914B226A2B9B200ED3914 /* FeaturedView.swift in Sources */,
 				1059149526A29CCC00ED3914 /* LaunchDetailsViewController.swift in Sources */,
 				105913ED26A2190800ED3914 /* Network.swift in Sources */,
@@ -464,6 +479,7 @@
 				1059139126A2106800ED3914 /* AppDelegate.swift in Sources */,
 				1059146B26A26F2F00ED3914 /* MainState.swift in Sources */,
 				1059147926A274E100ED3914 /* Button.swift in Sources */,
+				105914BD26A2C6C100ED3914 /* WebViewLoading.swift in Sources */,
 				1059147126A26F5C00ED3914 /* MainView.swift in Sources */,
 				1059142926A2662600ED3914 /* EmptyEditableView.swift in Sources */,
 				1059142026A24C5400ED3914 /* API.swift in Sources */,

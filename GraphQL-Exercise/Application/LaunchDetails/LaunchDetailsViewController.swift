@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol LaunchDetailsViewControllerDelegate: NSObjectProtocol {
+    func openURL(url: URL)
+}
+
 class LaunchDetailsViewController: UIViewController {
     
     // MARK: - Properties
@@ -36,6 +40,7 @@ class LaunchDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        innerView.setDelegate(delegate: self)
         innerView.collectionView.dataSource = self
     }
 }
@@ -62,5 +67,12 @@ extension LaunchDetailsViewController: UICollectionViewDataSource {
             cell.bind(ship: ship)
         }
         return cell
+    }
+}
+
+extension LaunchDetailsViewController: LaunchDetailsViewControllerDelegate {
+    func openURL(url: URL) {
+        let controller = WebViewController(url: url)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }

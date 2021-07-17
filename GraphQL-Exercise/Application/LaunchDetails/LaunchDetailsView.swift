@@ -54,15 +54,12 @@ internal final class LaunchDetailsView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-// MARK: - Private Constants
-
-private extension LaunchDetailsView {
-    enum Font {
-        static let kern: CGFloat = 0.34
-        static let title = UIFont.systemFont(ofSize: 33, weight: .heavy)
-        static let description = UIFont.systemFont(ofSize: 17, weight: .regular)
+    
+    // MARK: - Configuration
+    
+    weak var delegate: LaunchDetailsViewControllerDelegate?
+    func setDelegate(delegate: LaunchDetailsViewControllerDelegate) {
+        self.delegate = delegate
     }
 }
 
@@ -116,7 +113,7 @@ private extension LaunchDetailsView {
             featuredView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             featuredView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 5),
             
-            // Table view
+            // Collection view
             collectionView.topAnchor.constraint(equalTo: featuredView.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
@@ -127,10 +124,22 @@ private extension LaunchDetailsView {
 
 private extension LaunchDetailsView {
     @objc func didPressWebButton() {
-        //delegate?.performCreateNewCounter()
+        guard let stringUrl = launch.links?.articleLink,
+            let url = URL(string: stringUrl) else {
+            return
+        }
+        delegate?.openURL(url: url)
     }
     
     @objc func didPressVideoButton() {
-        //delegate?.performRefresh()
+        guard let stringUrl = launch.links?.videoLink else {
+            return
+        }
+        let fullURL = stringUrl.split{$0 == "/"}.map(String.init)
+        let newUrl = "https://www.youtube.com/embed/\(fullURL[2])"
+        guard let url = URL(string: newUrl) else {
+            return
+        }
+        delegate?.openURL(url: url)
     }
 }
