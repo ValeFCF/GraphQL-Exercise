@@ -23,6 +23,10 @@
 		1059143A26A266ED00ED3914 /* StringEntension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059143926A266ED00ED3914 /* StringEntension.swift */; };
 		1059144826A2691100ED3914 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059144726A2691100ED3914 /* LoadingView.swift */; };
 		1059146026A26D4E00ED3914 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059145F26A26D4E00ED3914 /* SceneDelegate.swift */; };
+		1059146526A26EE100ED3914 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1059146426A26EE100ED3914 /* Localizable.strings */; };
+		1059146B26A26F2F00ED3914 /* MainState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059146A26A26F2F00ED3914 /* MainState.swift */; };
+		1059147126A26F5C00ED3914 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059147026A26F5C00ED3914 /* MainView.swift */; };
+		1059147926A274E100ED3914 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059147826A274E100ED3914 /* Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,10 @@
 		1059143926A266ED00ED3914 /* StringEntension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEntension.swift; sourceTree = "<group>"; };
 		1059144726A2691100ED3914 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		1059145F26A26D4E00ED3914 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1059146426A26EE100ED3914 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		1059146A26A26F2F00ED3914 /* MainState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainState.swift; sourceTree = "<group>"; };
+		1059147026A26F5C00ED3914 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1059147826A274E100ED3914 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				1059139926A2106900ED3914 /* Assets.xcassets */,
+				1059146426A26EE100ED3914 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -170,6 +179,7 @@
 			children = (
 				1059142826A2662600ED3914 /* EmptyEditableView.swift */,
 				1059144726A2691100ED3914 /* LoadingView.swift */,
+				1059147826A274E100ED3914 /* Button.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -211,9 +221,27 @@
 		1059144F26A26A5E00ED3914 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1059146F26A26F5200ED3914 /* Views */,
+				1059146926A26F1A00ED3914 /* States */,
 				1059139426A2106800ED3914 /* MainViewController.swift */,
+				1059147026A26F5C00ED3914 /* MainView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		1059146926A26F1A00ED3914 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				1059146A26A26F2F00ED3914 /* MainState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		1059146F26A26F5200ED3914 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1059139D26A2106900ED3914 /* LaunchScreen.storyboard in Resources */,
+				1059146526A26EE100ED3914 /* Localizable.strings in Resources */,
 				1059139A26A2106900ED3914 /* Assets.xcassets in Resources */,
 				1059141826A24BB600ED3914 /* LaunchList.graphql in Resources */,
 			);
@@ -381,6 +410,9 @@
 				1059143A26A266ED00ED3914 /* StringEntension.swift in Sources */,
 				1059139526A2106800ED3914 /* MainViewController.swift in Sources */,
 				1059139126A2106800ED3914 /* AppDelegate.swift in Sources */,
+				1059146B26A26F2F00ED3914 /* MainState.swift in Sources */,
+				1059147926A274E100ED3914 /* Button.swift in Sources */,
+				1059147126A26F5C00ED3914 /* MainView.swift in Sources */,
 				1059142926A2662600ED3914 /* EmptyEditableView.swift in Sources */,
 				1059142026A24C5400ED3914 /* API.swift in Sources */,
 				1059144826A2691100ED3914 /* LoadingView.swift in Sources */,

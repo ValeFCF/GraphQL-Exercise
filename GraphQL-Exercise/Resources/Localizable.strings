@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  GraphQL-Exercise
+
+  Created by Valentín Granados on 16/07/21.
+  
+*/
+
+"APP_NAME" = "Launches";
+
+"NO_RESULTS_SEARCH_TABLE_VIEW" = "No results";
+
+"NO_RESULTS_YET" = "No results yet";
+"NO_RESULTS_YET_DESCRIPTION" = "“When I started counting my blessings, my whole life turned around.”
+—Willie Nelson";
+
+"RETRY" = "Retry";
+
+"ERROR_TITLE" = "Couldn’t load the launches";
+"ERROR_DESCRIPTION" = "The Internet connection appears to be offline.";
+
+"SEARCH" = "Search";

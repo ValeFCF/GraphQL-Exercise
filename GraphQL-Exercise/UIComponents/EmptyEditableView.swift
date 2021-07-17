@@ -11,7 +11,7 @@ class EmptyEditableView: UIView {
     private let stackView = UIStackView()
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
-    let button = UIButton()
+    let button = Button()
     
     // MARK: - Initialization
     init() {
