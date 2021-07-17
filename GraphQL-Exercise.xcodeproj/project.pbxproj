@@ -33,6 +33,7 @@
 		1059149526A29CCC00ED3914 /* LaunchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059149426A29CCC00ED3914 /* LaunchDetailsViewController.swift */; };
 		105914A126A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059149F26A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.swift */; };
 		105914A226A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 105914A026A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.xib */; };
+		105914A826A2ABFF00ED3914 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 105914A726A2ABFF00ED3914 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				105914A826A2ABFF00ED3914 /* SDWebImage in Frameworks */,
 				105913C826A2125500ED3914 /* Apollo in Frameworks */,
 				105913CA26A2125500ED3914 /* ApolloWebSocket in Frameworks */,
 			);
@@ -298,6 +300,7 @@
 			packageProductDependencies = (
 				105913C726A2125500ED3914 /* Apollo */,
 				105913C926A2125500ED3914 /* ApolloWebSocket */,
+				105914A726A2ABFF00ED3914 /* SDWebImage */,
 			);
 			productName = "GraphQL-Exercise";
 			productReference = 1059138D26A2106800ED3914 /* GraphQL-Exercise.app */;
@@ -372,6 +375,7 @@
 			mainGroup = 1059138426A2106800ED3914;
 			packageReferences = (
 				105913C626A2125500ED3914 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				105914A626A2ABFF00ED3914 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 1059138E26A2106800ED3914 /* Products */;
 			projectDirPath = "";
@@ -784,6 +788,14 @@
 				minimumVersion = 0.45.0;
 			};
 		};
+		105914A626A2ABFF00ED3914 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -796,6 +808,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 105913C626A2125500ED3914 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloWebSocket;
+		};
+		105914A726A2ABFF00ED3914 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 105914A626A2ABFF00ED3914 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

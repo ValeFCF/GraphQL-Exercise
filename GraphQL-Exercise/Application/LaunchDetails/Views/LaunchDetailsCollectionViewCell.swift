@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class LaunchDetailsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
@@ -15,5 +16,13 @@ class LaunchDetailsCollectionViewCell: UICollectionViewCell {
     func bind(ship: LaunchPastListQuery.Data.LaunchesPast.Ship) {
         nameShip.text = ship.name
         homePort.text = ship.homePort
+        if let imageString = ship.image {
+            bindImage(imageString)
+        }
+    }
+    
+    private func bindImage(_ imageString: String) {
+        let placeholder = UIImage(named: "placeholderImage")!
+        imageView.sd_setImage(with: URL(string: imageString), placeholderImage: placeholder)
     }
 }
