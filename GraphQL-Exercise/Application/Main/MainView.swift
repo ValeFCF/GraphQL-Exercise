@@ -44,7 +44,7 @@ internal final class MainView: UIView {
         tableView.backgroundColor = .background
         tableView.separatorStyle = .none
         let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "CounterTableViewCell", bundle: bundle)
+        let nib = UINib(nibName: "LaunchTableViewCell", bundle: bundle)
         tableView.register(nib, forCellReuseIdentifier: kTableViewCell)
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self,

@@ -169,14 +169,19 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = innerView.kTableViewCell
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: identifier
+            ) as? LaunchTableViewCell else {
+                fatalError("[LaunchTableViewCell] - \(identifier) should be registered.")
+        }
         let launch: LaunchPastListQuery.Data.LaunchesPast
         if isFiltering {
             launch = filteredLaunches[indexPath.row]
         } else {
             launch = launches[indexPath.row]
         }
-        let cell = UITableViewCell()
-        cell.textLabel?.text = launch.missionName
+        cell.bind(launch: launch)
         return cell
     }
 }
