@@ -31,6 +31,16 @@ internal final class LaunchDetailsView: UIView {
         collectionView.register(nib, forCellWithReuseIdentifier: kCollectionViewCell)
         return collectionView
     }()
+    
+    internal lazy var emptyCollectionView: EmptyEditableView = {
+        let emptyCollectionView = EmptyEditableView()
+        emptyCollectionView.subtitleLabel.text = "NO_RESULTS_COLLECTION_VIEW".localized
+        emptyCollectionView.button.removeFromSuperview()
+        emptyCollectionView.titleLabel.removeFromSuperview()
+        return emptyCollectionView
+    }()
+    
+    let featuredView = FeaturedView()
 
     // MARK: - Initialization
     
@@ -61,41 +71,66 @@ private extension LaunchDetailsView {
 private extension LaunchDetailsView {
     private func setup() {
         backgroundColor = .background
-        //setupEmptyView()
+        setupFeaturedView()
         setupErrorView()
         setupViewHierarchy()
         setupConstraints()
     }
     
-//    private func setupEmptyView() {
-//        emptyView.translatesAutoresizingMaskIntoConstraints = false
-//        emptyView.button.addTarget(nil,
-//                                   action: #selector(didPressRetry),
-//                                   for: .touchUpInside)
-//    }
+    private func setupFeaturedView() {
+        featuredView.titleLabel.text = launch.missionName
+        featuredView.dateLabel.text = launch.launchDateLocal?.dateFormatted
+        featuredView.siteLabel.text = launch.launchSite?.siteNameLong
+        if let rocketName = launch.rocket?.rocketName {
+            featuredView.rocketLabel.text = rocketName
+        }
+        featuredView.translatesAutoresizingMaskIntoConstraints = false
+        featuredView.webButton.addTarget(nil,
+                                         action: #selector(didPressWebButton),
+                                         for: .touchUpInside)
+        featuredView.videoButton.addTarget(nil,
+                                           action: #selector(didPressVideoButton),
+                                           for: .touchUpInside)
+        if launch.links?.articleLink == nil {
+            featuredView.webButton.isHidden = true
+        }
+        if launch.links?.videoLink == nil {
+            featuredView.videoButton.isHidden = true
+        }
+    }
     
     private func setupErrorView() {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func setupViewHierarchy() {
-        //addSubview(trickyView)
+        addSubview(featuredView)
         addSubview(collectionView)
     }
     
     private func setupConstraints() {
         let guide = safeAreaLayoutGuide
         NSLayoutConstraint.activate([
-//            emptyView.topAnchor.constraint(equalTo: guide.topAnchor),
-//            emptyView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
-//            emptyView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
-//            emptyView.bottomAnchor.constraint(equalTo: guide.bottomAnchor),
+            featuredView.topAnchor.constraint(equalTo: guide.topAnchor),
+            featuredView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
+            featuredView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
+            featuredView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 5),
             
             // Table view
-            collectionView.topAnchor.constraint(equalTo: guide.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: featuredView.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
         ])
+    }
+}
+
+private extension LaunchDetailsView {
+    @objc func didPressWebButton() {
+        //delegate?.performCreateNewCounter()
+    }
+    
+    @objc func didPressVideoButton() {
+        //delegate?.performRefresh()
     }
 }

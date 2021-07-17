@@ -16,21 +16,7 @@ class LaunchTableViewCell: UITableViewCell {
         accessoryType = .disclosureIndicator
         titleLabel.text = launch.missionName
         if let dateString = launch.launchDateLocal {
-            setDate(dateString: dateString)
-        }
-    }
-    
-    private func setDate(dateString: String) {
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-
-        let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "MMM dd, yyyy"
-
-        if let date = dateFormatterGet.date(from: dateString) {
-            let dateText = String(format: "DATE_LABEL_CELL".localized,
-                                  dateFormatterPrint.string(from: date))
-            dateLabel.text = dateText
+            dateLabel.text = dateString.dateFormatted
         }
     }
 }

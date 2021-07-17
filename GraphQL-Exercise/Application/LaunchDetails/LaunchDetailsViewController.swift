@@ -42,7 +42,13 @@ class LaunchDetailsViewController: UIViewController {
 
 extension LaunchDetailsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return launch.ships?.count ?? 0
+        let rowsInSection = launch.ships?.count ?? 0
+        if rowsInSection > 0 {
+            collectionView.backgroundView = nil
+        } else {
+            collectionView.backgroundView = innerView.emptyCollectionView
+        }
+        return rowsInSection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
