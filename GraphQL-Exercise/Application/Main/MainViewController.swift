@@ -32,7 +32,7 @@ class MainViewController: UIViewController {
     }()
     
     override func loadView() {
-        title = NSLocalizedString("APP_NAME", comment: "")
+        title = "APP_NAME".localized
         view = innerView
         
         configNavigationBar()
@@ -131,6 +131,11 @@ class MainViewController: UIViewController {
         }
         innerView.tableView.reloadData()
     }
+    
+    private func goToDetails(launch: LaunchPastListQuery.Data.LaunchesPast) {
+        let controller = LaunchDetailsViewController(launch: launch)
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 extension MainViewController: MainViewControllerDelegate {
@@ -148,7 +153,13 @@ extension MainViewController: UISearchResultsUpdating {
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("hola")
+        let launch: LaunchPastListQuery.Data.LaunchesPast
+        if isFiltering {
+            launch = filteredLaunches[indexPath.row]
+        } else {
+            launch = launches[indexPath.row]
+        }
+        goToDetails(launch: launch)
     }
 }
 

@@ -29,6 +29,10 @@
 		1059147926A274E100ED3914 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059147826A274E100ED3914 /* Button.swift */; };
 		1059148526A282F200ED3914 /* LaunchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059148326A282F200ED3914 /* LaunchTableViewCell.swift */; };
 		1059148626A282F200ED3914 /* LaunchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1059148426A282F200ED3914 /* LaunchTableViewCell.xib */; };
+		1059148D26A29CAA00ED3914 /* LaunchDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059148C26A29CAA00ED3914 /* LaunchDetailsView.swift */; };
+		1059149526A29CCC00ED3914 /* LaunchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059149426A29CCC00ED3914 /* LaunchDetailsViewController.swift */; };
+		105914A126A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1059149F26A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.swift */; };
+		105914A226A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 105914A026A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,10 @@
 		1059147826A274E100ED3914 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		1059148326A282F200ED3914 /* LaunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableViewCell.swift; sourceTree = "<group>"; };
 		1059148426A282F200ED3914 /* LaunchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchTableViewCell.xib; sourceTree = "<group>"; };
+		1059148C26A29CAA00ED3914 /* LaunchDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsView.swift; sourceTree = "<group>"; };
+		1059149426A29CCC00ED3914 /* LaunchDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsViewController.swift; sourceTree = "<group>"; };
+		1059149F26A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
+		105914A026A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +168,7 @@
 		1059142426A265BE00ED3914 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				1059148A26A29BE500ED3914 /* LaunchDetails */,
 				1059144F26A26A5E00ED3914 /* Main */,
 				1059144026A2676000ED3914 /* Network */,
 				1059143F26A2673F00ED3914 /* Launch */,
@@ -246,6 +255,25 @@
 			children = (
 				1059148326A282F200ED3914 /* LaunchTableViewCell.swift */,
 				1059148426A282F200ED3914 /* LaunchTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1059148A26A29BE500ED3914 /* LaunchDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1059148B26A29BF300ED3914 /* Views */,
+				1059148C26A29CAA00ED3914 /* LaunchDetailsView.swift */,
+				1059149426A29CCC00ED3914 /* LaunchDetailsViewController.swift */,
+			);
+			path = LaunchDetails;
+			sourceTree = "<group>";
+		};
+		1059148B26A29BF300ED3914 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1059149F26A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.swift */,
+				105914A026A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -365,6 +393,7 @@
 				1059146526A26EE100ED3914 /* Localizable.strings in Resources */,
 				1059148626A282F200ED3914 /* LaunchTableViewCell.xib in Resources */,
 				1059139A26A2106900ED3914 /* Assets.xcassets in Resources */,
+				105914A226A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.xib in Resources */,
 				1059141826A24BB600ED3914 /* LaunchList.graphql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,11 +441,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1059148526A282F200ED3914 /* LaunchTableViewCell.swift in Sources */,
+				1059149526A29CCC00ED3914 /* LaunchDetailsViewController.swift in Sources */,
 				105913ED26A2190800ED3914 /* Network.swift in Sources */,
 				1059143226A266CB00ED3914 /* UIColorExtension.swift in Sources */,
 				1059146026A26D4E00ED3914 /* SceneDelegate.swift in Sources */,
 				1059143A26A266ED00ED3914 /* StringEntension.swift in Sources */,
 				1059139526A2106800ED3914 /* MainViewController.swift in Sources */,
+				1059148D26A29CAA00ED3914 /* LaunchDetailsView.swift in Sources */,
+				105914A126A2A33D00ED3914 /* LaunchDetailsCollectionViewCell.swift in Sources */,
 				1059139126A2106800ED3914 /* AppDelegate.swift in Sources */,
 				1059146B26A26F2F00ED3914 /* MainState.swift in Sources */,
 				1059147926A274E100ED3914 /* Button.swift in Sources */,

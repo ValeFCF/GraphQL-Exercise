@@ -28,8 +28,9 @@ class LaunchTableViewCell: UITableViewCell {
         dateFormatterPrint.dateFormat = "MMM dd, yyyy"
 
         if let date = dateFormatterGet.date(from: dateString) {
-            print(dateFormatterPrint.string(from: date))
-            dateLabel.text = dateFormatterPrint.string(from: date)
+            let dateText = String(format: "DATE_LABEL_CELL".localized,
+                                  dateFormatterPrint.string(from: date))
+            dateLabel.text = dateText
         }
     }
 }
