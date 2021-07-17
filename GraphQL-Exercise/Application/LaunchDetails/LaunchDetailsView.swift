@@ -13,6 +13,8 @@ internal final class LaunchDetailsView: UIView {
     
     private let launch: LaunchPastListQuery.Data.LaunchesPast
     
+    let shipsTitle = UILabel()
+    
     let kCollectionViewCell = "kCollectionViewCell"
     lazy var collectionView: UICollectionView = {
         let itemWidth = (UIScreen.main.bounds.width / 2) - 20
@@ -68,10 +70,21 @@ internal final class LaunchDetailsView: UIView {
 private extension LaunchDetailsView {
     private func setup() {
         backgroundColor = .background
+        setupShipsLabel()
         setupFeaturedView()
         setupErrorView()
         setupViewHierarchy()
         setupConstraints()
+    }
+    
+    private func setupShipsLabel() {
+        shipsTitle.translatesAutoresizingMaskIntoConstraints = false
+        shipsTitle.text = "SHIPS".localized
+        shipsTitle.font = Font.title
+        shipsTitle.textAlignment = .center
+        shipsTitle.backgroundColor = .white
+        shipsTitle.layer.masksToBounds = true
+        shipsTitle.layer.cornerRadius = 12
     }
     
     private func setupFeaturedView() {
@@ -101,6 +114,7 @@ private extension LaunchDetailsView {
     }
     
     private func setupViewHierarchy() {
+        addSubview(shipsTitle)
         addSubview(featuredView)
         addSubview(collectionView)
     }
@@ -108,17 +122,32 @@ private extension LaunchDetailsView {
     private func setupConstraints() {
         let guide = safeAreaLayoutGuide
         NSLayoutConstraint.activate([
+            // Header
             featuredView.topAnchor.constraint(equalTo: guide.topAnchor),
             featuredView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
             featuredView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             featuredView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height / 5),
             
+            // title collection view
+            shipsTitle.topAnchor.constraint(equalTo: featuredView.bottomAnchor, constant: 8),
+            shipsTitle.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 12),
+            shipsTitle.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -12),
+            shipsTitle.heightAnchor.constraint(equalToConstant: 36),
+            
             // Collection view
-            collectionView.topAnchor.constraint(equalTo: featuredView.bottomAnchor),
+            collectionView.topAnchor.constraint(equalTo: shipsTitle.bottomAnchor, constant: 4),
             collectionView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
         ])
+    }
+}
+
+// MARK: - Private definitions
+
+private extension LaunchDetailsView {
+    enum Font {
+        static let title = UIFont.systemFont(ofSize: 17, weight: .semibold)
     }
 }
 

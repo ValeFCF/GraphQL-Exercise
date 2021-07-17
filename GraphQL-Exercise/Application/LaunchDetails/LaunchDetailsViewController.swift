@@ -49,8 +49,10 @@ extension LaunchDetailsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let rowsInSection = launch.ships?.count ?? 0
         if rowsInSection > 0 {
+            innerView.shipsTitle.isHidden = false
             collectionView.backgroundView = nil
         } else {
+            innerView.shipsTitle.isHidden = true
             collectionView.backgroundView = innerView.emptyCollectionView
         }
         return rowsInSection
