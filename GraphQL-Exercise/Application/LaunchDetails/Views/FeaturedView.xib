@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeaturedView" customModule="GraphQL_Exercise" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="AHH-PK-alY"/>
+                <outlet property="dateLabel" destination="EhP-jU-w5r" id="tp7-m8-uOj"/>
+                <outlet property="rocketLabel" destination="1DI-Kp-HGv" id="ign-U0-Tbu"/>
+                <outlet property="siteLabel" destination="hSJ-Vu-llk" id="0mg-D4-vid"/>
+                <outlet property="titleLabel" destination="Ntt-Pq-gUe" id="IRV-8S-9TA"/>
+                <outlet property="videoButton" destination="GqI-qP-i3y" id="Olz-Oc-BAy"/>
+                <outlet property="webButton" destination="DLs-HK-MgZ" id="gHL-ww-rL0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ntt-Pq-gUe">
+                    <rect key="frame" x="12" y="24" width="390" height="38.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Site name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hSJ-Vu-llk">
+                    <rect key="frame" x="12" y="70.5" width="390" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="bUI-xF-Ddf">
+                    <rect key="frame" x="12" y="99" width="390" height="57"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="43U-6g-Yad">
+                            <rect key="frame" x="0.0" y="0.0" width="221.5" height="57"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EhP-jU-w5r">
+                                    <rect key="frame" x="0.0" y="0.0" width="221.5" height="40"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rocket name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1DI-Kp-HGv">
+                                    <rect key="frame" x="0.0" y="40" width="221.5" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HJy-6T-HIH">
+                            <rect key="frame" x="221.5" y="0.0" width="168.5" height="57"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLs-HK-MgZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="168.5" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" title="Visit web"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GqI-qP-i3y">
+                                    <rect key="frame" x="0.0" y="29" width="168.5" height="28"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <state key="normal" title="See video"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="bUI-xF-Ddf" secondAttribute="height" multiplier="199:29" id="e67-S6-c1h"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="bUI-xF-Ddf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="5Ed-gW-Y6E"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bUI-xF-Ddf" secondAttribute="trailing" constant="12" id="8Yc-eZ-FSS"/>
+                <constraint firstItem="bUI-xF-Ddf" firstAttribute="top" secondItem="hSJ-Vu-llk" secondAttribute="bottom" constant="8" id="HCf-il-0NJ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bUI-xF-Ddf" secondAttribute="bottom" constant="12" id="HDH-4r-2IQ"/>
+                <constraint firstItem="hSJ-Vu-llk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="12" id="LMF-QZ-SMf"/>
+                <constraint firstAttribute="trailing" secondItem="Ntt-Pq-gUe" secondAttribute="trailing" constant="12" id="N3F-9m-o2R"/>
+                <constraint firstItem="Ntt-Pq-gUe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="bDd-nX-MSU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hSJ-Vu-llk" secondAttribute="trailing" constant="12" id="dgm-PL-4WD"/>
+                <constraint firstItem="Ntt-Pq-gUe" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="lTV-ud-YJM"/>
+                <constraint firstItem="hSJ-Vu-llk" firstAttribute="top" secondItem="Ntt-Pq-gUe" secondAttribute="bottom" constant="8" id="pK4-lN-yfk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-48" y="-177"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
